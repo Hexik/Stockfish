@@ -1337,6 +1337,7 @@ moves_loop: // When in check, search starts from here
               }
               else // Fail high
               {
+                  ss->statScore = std::max(ss->statScore, 0);
                   tte->save(posKey, value_to_tt(value, ss->ply), BOUND_LOWER,
                             ttDepth, move, ss->staticEval, TT.generation());
 
